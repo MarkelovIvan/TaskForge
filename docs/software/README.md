@@ -109,6 +109,7 @@ ALTER TABLE "members" ADD CONSTRAINT "members_project_id_fkey" FOREIGN KEY ("pro
 ```
 
 ## RESTfull система управління проектами
+```python
 from flask import Flask, request, jsonify
 from model import tasks
 
@@ -148,9 +149,9 @@ def delete_task(id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+```
 
-
-
+```python
 import psycopg
 
 class tasks:
@@ -248,4 +249,4 @@ class tasks:
         except Exception as error:
             self.connection.rollback()
             return {"message": "Delete task failed", "error": str(error), "status_code": 500}
-
+```
